@@ -1,20 +1,11 @@
-//Import section
-import'./Home.css'
+import React from 'react';
 
-
-//Functional component
-function Home() {
-    return(
-    <div className ="home">
-
-        <div className ="home-text">
-        <h1>Organika(Home.jsx)</h1>
-        <h3> Fresh food,healthie life.</h3>
+const Home = () => {
+    return (
+        <div>
+            {/* Home page content goes here */}
         </div>
+    );
+};
 
-    </div>
-    )
-} 
-
-//Export section
-export default Home
+export default Home;

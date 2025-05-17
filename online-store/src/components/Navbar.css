@@ -1,0 +1,141 @@
+/* Import a professional-looking font (optional, add to your main CSS or index.html) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+.navbar {
+  /* Sunset gradient background */
+  background: linear-gradient(90deg, #4A00E0 0%, #8E2DE2 30%, #F97794 60%, #FFD452 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Add a subtle animated layer for a "shimmering water" or "heat haze" effect */
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: transform 0.8s ease-in-out;
+  animation: shimmer 15s infinite linear; /* Slow shimmer effect */
+  pointer-events: none; /* Make sure it doesn't interfere with clicks */
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg); /* Moves across and beyond */
+  }
+}
+
+.navbar-brand a.navbar-item,
+.navbar-brand a.navbar-item:hover,
+.navbar-brand a.navbar-item:focus {
+  font-size: 3.8em; /* INCREASED: Larger for brand (was 3.0em) - adjust as needed */
+  font-weight: 600;
+  color: #ffffff; /* Bright white for contrast against the sunset */
+  text-decoration: none;
+  padding: 0.5rem 0; /* Adjust padding as needed */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Slight text shadow for depth */
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  color: #f0e6ff; /* Soft lavender/off-white for text, readable on the gradient */
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  margin-left: 0.5rem; /* Spacing between items */
+  font-size: 16px; /* INCREASED: Larger for menu items (was 1em) - adjust to e.g., 1.2em, 1.4em, 18px, 20px etc. */
+  font-weight: 500;
+  border-radius: 5px; /* Slightly rounded edges for a softer look */
+  position: relative; /* For the underline hover effect */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  /* Sunset-themed underline color - can pick a specific shade */
+  background: #FFD452; /* Warm yellow from the sunset */
+  transition: width 0.4s ease;
+  -webkit-transition: width 0.4s ease;
+}
+
+.navbar-item:hover {
+  color: #ffffff;
+  /* background-color: rgba(255, 255, 255, 0.1); */ /* Subtle highlight */
+}
+
+.navbar-item:hover::after {
+  width: 100%;
+  left: 0;
+  background-color: #FFB000; /* A richer gold/orange for hover underline */
+}
+
+/* Specific item styling if needed - e.g., an "active" class */
+.navbar-item.active {
+  color: #ffffff;
+  font-weight: 600;
+  background-color: rgba(255,255,255,0.15); /* Slightly more prominent background */
+}
+
+.navbar-item.active::after {
+  width: 100%;
+  left: 0;
+  background-color: #FFD452;
+}
+
+/* Simple responsive consideration: Stack items on smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .navbar-item {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem; /* Adjust padding for stacked items */
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 0.5rem; /* Add bottom margin */
+    font-size: 1.25em; /* ADJUSTED FOR MOBILE: Slightly smaller than desktop but still larger than original (was 1em based) */
+  }
+
+  .navbar-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .navbar-brand a.navbar-item {
+    margin-bottom: 0.5rem; /* Space below brand on small screens */
+    font-size: 2.8em; /* ADJUSTED FOR MOBILE: Ensure brand name is still large but fits well (was 3.0em based) */
+  }
+
+  .navbar::before { /* Optional: Tone down or adjust shimmer on mobile if it's too much */
+    animation-duration: 20s; /* Slower shimmer on mobile */
+  }
+}

@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Basic font, choose your preferred one */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.fancy-footer {
+    background-color: #3fb6cb; /* Cotton candy light blue */
+    color: #eb4dce; /* Initial text color - dark gray for contrast */
+    padding: 25px 20px; /* Generous padding for a "fancy" feel */
+    display: flex; /* Enables Flexbox */
+    justify-content: space-around; /* Distributes items evenly with space around them */
+    align-items: center; /* Aligns items vertically in the center */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 15px; /* Adds space between flex items if they wrap */
+    margin-top: auto; /* Pushes footer to the bottom of the viewport if content is short */
+    border-top: 3px solid #4d9bcf; /* Slightly darker blue for a subtle top border */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a "lifted" effect */
+}
+
+.footer-item {
+    cursor: pointer; /* Indicates the text is clickable */
+    font-size:16px;
+    padding: 8px 12px; /* Padding within each item for better click area and look */
+    border-radius: 5px; /* Slightly rounded corners for items */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color and potential background */
+}
+
+.footer-item:hover {
+    color: #0056b3; /* A slightly darker blue on hover for feedback before click */
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle highlight on hover */
+}
+
+.footer-item.clicked {
+    color: rgb(227, 100, 189); /* Text color turns white when clicked */
+    font-weight: bold; /* Optionally make it bold */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .fancy-footer {
+        flex-direction: column; /* Stack items vertically on small screens */
+        padding: 20px 15px;
+    }
+    .footer-item {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+}

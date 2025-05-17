@@ -1,15 +1,15 @@
-import './App.css'
-import Home from'./pages/Home'
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer ";
+import Home from"./pages/Home";
 function App() {
-
   return (
     <>
-      <h1>Hello world from react.js</h1>
-
+      <Navbar />
       <Home/>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
