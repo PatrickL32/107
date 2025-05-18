@@ -1,20 +1,20 @@
 //import
-import React from "react"; // good practice to import react
+import React from "react";// good practice to import react
 import "./Navbar.css";
 
 //Logic
 function Navbar() {
 return (
-    <nav className="Navbar">
-    <div className="Navbar-brand"></div>
-    <div className="Navbar-menu"></div>
-    <a href="/" className="Navbar-item">
+    <nav className="navbar">
+    <div className="navbar-brand"></div>
+    <div className="navbar-menu"></div>
+    <a href="/" className="navbar-item">
         Home
     </a>
-    <a href="/Products" className="Navbar-item">
+    <a href="/Products" className="navbar-item">
         Products
     </a>
-    <a href="/catalog" className="Navbar-item">
+    <a href="/catalog" className="navbar-item">
         About
     </a>
     </nav>

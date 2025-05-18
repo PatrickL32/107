@@ -8,8 +8,8 @@ function Footer() {
   const year= new Date().getFullYear();
   //this will get the current year
   return (
-    <footer classNane="footer">
-      <p>{year} Organika. all rights resevered</p>
+    <footer className="footer">
+      <p>{year} Trans community against Hate. all rights resevered</p>
       <p> Made with love By patrick Lewis </p>
     </footer>
   );
